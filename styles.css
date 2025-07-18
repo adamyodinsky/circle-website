@@ -134,7 +134,7 @@ body {
 }
 
 button.connect-button {
-    background-color: #FF6B42;
+    background-color: #fa7d47;
     color: white;
     border: none;
     border-radius: 100px;
@@ -150,12 +150,35 @@ button.connect-button {
     animation: fadeUpAnimation 0.8s ease-out 0.9s forwards;
     opacity: 0;
     margin: clamp(4px, 1.5vh, 16px) 0;
+    /* Remove default browser styling */
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
 }
 
 button.connect-button:hover {
     background-color: #FF8561;  /* Lighter on hover */
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus state for accessibility */
+button.connect-button:focus-visible {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(255, 127, 92, 0.3);
+}
+
+/* Active/pressed state */
+button.connect-button:active {
+    background-color: #e56b3a;  /* Darker when pressed */
+    transform: translateY(0px) scale(0.98);  /* Slightly smaller and reset vertical position */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);  /* Reduced shadow for pressed effect */
+    transition: all 0.1s ease;  /* Faster transition for immediate feedback */
+}
+
+/* Prevent double-tap zoom on mobile */
+button.connect-button:active:hover {
+    transform: translateY(0px) scale(0.98);
 }
 
 .divider {

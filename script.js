@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
   connectButton.textContent = `Connect with ${inviterName}`;
   connectButton.addEventListener("click", function () {
     // Construct deep links
-    const androidDeepLink = `com.circle://(screens)/profile/${userId}`;
-    const iosDeepLink = `com.circle://(screens)/profile/${userId}`;
+    const androidDeepLink = `com.adamsolutions.circle://(screens)/profile/${userId}`;
+    const iosDeepLink = `com.adamsolutions.circle://(screens)/profile/${userId}`;
 
     // Fallback URLs (app store links)
     const androidStoreLink =
