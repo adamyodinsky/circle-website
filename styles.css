@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'Matemasie';
+    src: url('assets/fonts/MatemasieRegular/Matemasie.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --circle-navy: #1B3168;
+    --circle-coral: #FF7F5C;
+    --circle-light-coral: #FFE4DC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container controls layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;  /* Changed to space-between for better distribution */
+    min-height: 100vh;
+    /* More padding, especially on bottom for small screens */
+    padding: clamp(16px, 4vh, 48px) clamp(12px, 4vw, 32px) clamp(24px, 5vh, 64px);
+    text-align: center;
+}
+
+/* Animation keyframes */
+@keyframes logoAnimation {
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes titleAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUpAnimation {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Logo and title as a unit */
+.logo-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0;
+}
+
+.logo {
+    height: auto;
+    width: 350px;
+    /* margin: 10px; */
+    padding: 0;
+    display: block;
+    animation: logoAnimation 1s ease-out forwards;
+    opacity: 0;
+}
+
+.app-title {
+    font-family: 'Matemasie', sans-serif;
+    font-size: clamp(55px, 10vw, 85px);  /* Increased size */
+    color: #121761;
+    line-height: 1;
+    padding-bottom: clamp(20px, 5vh, 50px);
+    animation: titleAnimation 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* Content group with balanced spacing */
+.invite-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    /* Increased gap between elements */
+    gap: clamp(16px, 3.5vh, 32px);
+    animation: fadeUpAnimation 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+#invite-message {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--circle-navy);
+    /* Smaller text on small screens */
+    font-size: clamp(20px, 5.5vw, 32px);
+    line-height: 1.2;
+    font-weight: 500;
+    margin: 0;
+    padding: clamp(4px, 1.5vh, 16px) 0;
+}
+
+button.connect-button {
+    background-color: #FF6B42;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    /* Narrower on small screens */
+    width: clamp(180px, 80%, 360px);
+    padding: clamp(10px, 2vh, 18px) clamp(16px, 3vw, 32px);
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(16px, 4vw, 20px);
+    font-weight: 550;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeUpAnimation 0.8s ease-out 0.9s forwards;
+    opacity: 0;
+    margin: clamp(4px, 1.5vh, 16px) 0;
+}
+
+button.connect-button:hover {
+    background-color: #FF8561;  /* Lighter on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.divider {
+    width: 85%;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    line-height: 0.1em;
+    /* Tighter margins on small screens */
+    margin: clamp(16px, 3vh, 32px) 0;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 clamp(6px, 2vw, 12px);
+    color: #666;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: clamp(13px, 3vw, 16px);
+}
+
+.app-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    gap: clamp(12px, 2.5vh, 24px);
+    /* Added more padding at bottom */
+    padding: clamp(8px, 2vh, 24px) 0 clamp(16px, 3vh, 32px);
+}
+
+.app-button {
+    transition: transform 0.2s ease;
+}
+
+.app-button:hover {
+    transform: scale(1.05);
+}
+
+.app-button img {
+    /* Smaller on small screens */
+    height: clamp(32px, 5vh, 42px);
+    width: auto;
+}
+
+.app-button.ios img {
+    padding: 2px;
+}
+
+.subtitle {
+    font-family: 'Lexend Deca', sans-serif;
+    color: #666;
+    font-size: clamp(13px, 3vw, 16px);
+    /* More margin, especially at bottom */
+    margin: clamp(12px, 2.5vh, 24px) 0 clamp(20px, 4vh, 40px);
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    .logo {
+        width: 250px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .app-title {
+        font-size: clamp(60px, 8vw, 65px);  /* Responsive font size for mobile */
+        margin-bottom: 20px;
+    }
+
+    #invite-message {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+
+    button.connect-button {
+        font-size: 18px;
+        padding: 12px 30px;
+        width: 90%;
+        max-width: 300px;
+        min-width: unset;
+    }
+
+    .app-button img {
+        height: 45px;
+    }
+
+    .divider {
+        width: 90%;
+        margin-top: 15px auto;
+        margin-bottom: 0px;
+    }
+
+    .app-buttons {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+/* Small phone adjustments */
+@media screen and (max-width: 380px) {
+    .container {
+        padding: 16px 12px 24px;  /* Tighter padding for small screens */
+    }
+
+    .logo {
+        width: 200px;  /* Slightly smaller logo */
+    }
+
+    .app-title {
+        font-size: clamp(50px, 7vw, 55px);  /* Smaller but still proportional */
+        padding-bottom: 24px;
+    }
+
+    #invite-message {
+        font-size: 22px;  /* Smaller fixed size */
+        padding: 4px 8px;
+    }
+
+    button.connect-button {
+        width: 85%;
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+
+    .app-buttons {
+        width: 100%;
+    }
+
+    .app-button img {
+        height: 50px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin: 12px 0 20px;
+    }
+}
