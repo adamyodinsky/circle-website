@@ -90,6 +90,8 @@ body {
     display: block;
     animation: logoAnimation 1s ease-out forwards;
     opacity: 0;
+    /* Adding gentle drop shadow to logo */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
 }
 
 .app-title {
@@ -100,6 +102,8 @@ body {
     padding-bottom: clamp(20px, 5vh, 50px);
     animation: titleAnimation 1s ease-out 0.3s forwards;
     opacity: 0;
+    /* Adding subtle text shadow */
+    text-shadow: 2px 2px 3px rgba(18, 23, 97, 0.15);
 }
 
 /* Content group with balanced spacing */
@@ -139,7 +143,8 @@ button.connect-button {
     font-weight: 550;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Updating box shadow to be more subtle and elevated */
+    box-shadow: 0 3px 8px rgba(250, 125, 71, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
     animation: fadeUpAnimation 0.8s ease-out 0.9s forwards;
     opacity: 0;
     margin: clamp(4px, 1.5vh, 16px) 0;
@@ -153,7 +158,8 @@ button.connect-button {
 button.connect-button:hover {
     background-color: #FF8561;  /* Lighter on hover */
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Enhanced hover shadow but still gentle */
+    box-shadow: 0 6px 12px rgba(250, 125, 71, 0.25), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Focus state for accessibility */
