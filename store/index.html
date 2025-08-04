@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle - Real connections, not just followers</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Circle">
+  <link rel="stylesheet" href="../fonts.css">
+  <link rel="stylesheet" href="redirect.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo-group">
+      <img src="../assets/img/logo.png" alt="Circle Logo" class="logo">
+      <h1 class="app-title">Circle</h1>
+    </div>
+    <div class="content">
+      <p>Real connections - Not just followers</p>
+    </div>
+  </div>
+
+  <script>
+    const ANDROID_STORE_URL = 'https://play.google.com/store/apps/details?id=com.adamsolutions.circle';
+    const IOS_STORE_URL = 'https://apps.apple.com/app/id6747255364';
+
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isAndroid = /android/.test(userAgent);
+    const isIOS = /ipad|iphone|ipod/.test(userAgent);
+
+    // Immediate redirect to appropriate store
+    if (isAndroid) {
+      window.location.href = ANDROID_STORE_URL;
+    } else if (isIOS) {
+      window.location.href = IOS_STORE_URL;
+    } else {
+      window.location.href = IOS_STORE_URL;
+    }
+  </script>
+</body>
+
+</html>
