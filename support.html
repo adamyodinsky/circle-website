@@ -5,32 +5,70 @@
   <meta charset="UTF-8" />
   <title>Circle App Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Circle">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    body {
-      font-family: sans-serif;
+    .support-container {
       max-width: 600px;
-      margin: 50px auto;
-      padding: 0 20px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      font-family: 'Lexend Deca', sans-serif;
       line-height: 1.6;
       color: #333;
+      text-align: center;
     }
 
-    h1 {
-      color: #444;
+    .support-header {
+      margin-bottom: 40px;
     }
 
-    a {
-      color: #007AFF;
+    .support-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(32px, 6vw, 48px);
+      color: #121761;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .support-content {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    .support-content a {
+      color: var(--circle-coral);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .support-content a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
-  <h1>Circle App Support</h1>
-  <p>Need help with Circle? We’re here for you.</p>
-  <p>Email us at <a href="mailto:info@adam-solutions.io">info@adam-solutions.io</a> and we’ll get back to you as soon as
-    possible.</p>
-  <p>Thank you for being part of the Circle community!</p>
+  <div class="support-container">
+    <div class="support-header">
+      <div class="logo-group">
+        <img src="assets/img/logo.png" alt="Circle Logo" class="logo" style="width: 200px; margin-bottom: 20px;">
+      </div>
+      <h1 class="support-title">Circle App Support</h1>
+    </div>
+    <div class="support-content">
+      <p>Need help with Circle? We're here for you.</p>
+      <p>Email us at <a href="mailto:info@adam-solutions.io">info@adam-solutions.io</a> and we'll get back to you as
+        soon as possible.</p>
+      <p>Thank you for being part of the Circle community!</p>
+    </div>
+  </div>
 </body>
 
 </html>

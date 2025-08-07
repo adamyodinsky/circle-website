@@ -1,72 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Adam Solutions</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
 
-  <body id="page-top">
-    <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container d-flex align-items-center flex-column">
-        <!-- Masthead Avatar Image-->
-        <img class="masthead-avatar mb-5" src="assets/img/logo.png" alt="..." />
-        <!-- Masthead Heading-->
-        <h1 class="masthead-heading text-uppercase mb-0">
-          Circle - Delete account data request
-        </h1>
-        <div class="divider-custom divider-light">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Circle - Delete Account</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Circle">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .delete-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      font-family: 'Lexend Deca', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      text-align: center;
+    }
 
-        <p class="masthead-subheading font-weight-light mb-0">
-          For deleting you account data, please send an email to
-          info@adam-solutions.io
-        </p>
-        <p class="masthead-subheading font-weight-light mb-0">
-          The email must contain the following information: username, email,
-          password, and a reason for deleting the account. Thank you for your
-          cooperation.
-        </p>
+    .delete-header {
+      margin-bottom: 40px;
+    }
+
+    .delete-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      color: #121761;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .delete-content {
+      font-size: 18px;
+      margin: 20px 0;
+      text-align: left;
+      background: var(--circle-light-coral);
+      padding: 30px;
+      border-radius: 20px;
+      border: 2px solid var(--circle-coral);
+    }
+
+    .delete-content p {
+      margin-bottom: 15px;
+    }
+
+    .delete-content strong {
+      color: var(--circle-navy);
+    }
+
+    .email-highlight {
+      color: var(--circle-coral);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .email-highlight:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="delete-container">
+    <div class="delete-header">
+      <div class="logo-group">
+        <img src="assets/img/logo.png" alt="Circle Logo" class="logo" style="width: 200px; margin-bottom: 20px;">
       </div>
-    </header>
+      <h1 class="delete-title">Circle - Delete Account Data Request</h1>
+    </div>
+    <div class="delete-content">
+      <p>For deleting your account data, please send an email to <a href="mailto:info@adam-solutions.io"
+          class="email-highlight">info@adam-solutions.io</a></p>
+      <p>The email must contain the following information:</p>
+      <ul>
+        <li><strong>Username</strong></li>
+        <li><strong>Email address</strong></li>
+        <li><strong>Password</strong></li>
+        <li><strong>Reason for deleting the account</strong></li>
+      </ul>
+      <p>Thank you for your cooperation.</p>
+    </div>
+  </div>
+</body>
 
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-  </body>
 </html>
