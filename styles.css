@@ -325,3 +325,26 @@ button.connect-button:active:hover {
         margin: 12px 0 20px;
     }
 }
+
+/* Privacy policy link - very small and discrete for compliance */
+.privacy-link {
+    position: fixed;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.privacy-link a {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 10px;
+    color: #999;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.privacy-link a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
