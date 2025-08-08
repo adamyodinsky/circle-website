@@ -2,7 +2,7 @@
     --circle-navy: #1B3168;
     --circle-coral: #FF7F5C;
     --circle-light-coral: #FFE4DC;
-    --section-padding: clamp(40px, 8vh, 80px);
+    --section-padding: clamp(30px, 6vh, 60px);
     --container-max-width: 1200px;
     --text-primary: #333;
     --text-secondary: #666;
@@ -37,7 +37,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: var(--section-padding) 0;
+    padding: clamp(20px, 4vh, 40px) 0;
 }
 
 .logo-group {
@@ -439,6 +439,14 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+    :root {
+        --section-padding: clamp(20px, 4vh, 40px);
+    }
+    
+    .hero {
+        padding: clamp(15px, 3vh, 30px) 0;
+    }
+    
     .screenshots-carousel {
         padding: 0 40px; /* Sufficient padding for shadows on small screens */
     }
