@@ -402,7 +402,7 @@ body {
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .screenshots-carousel {
-        padding: 0 60px; /* More padding for shadows on mobile */
+        padding: 0 20px; /* Reduced padding to allow buttons to extend */
     }
     
     .carousel-container {
@@ -422,11 +422,11 @@ body {
     }
     
     .carousel-prev {
-        left: 10px;
+        left: -10px; /* Positioned nicely at the edge on mobile */
     }
     
     .carousel-next {
-        right: 10px;
+        right: -10px; /* Positioned nicely at the edge on mobile */
     }
     
     .carousel-prev::before {
@@ -448,7 +448,7 @@ body {
     }
     
     .screenshots-carousel {
-        padding: 0 40px; /* Sufficient padding for shadows on small screens */
+        padding: 0 15px; /* Minimal padding to allow buttons to extend */
     }
     
     .carousel-container {
@@ -467,11 +467,11 @@ body {
     }
     
     .carousel-prev {
-        left: 5px;
+        left: -15px; /* Nicely positioned at edge on small mobile */
     }
     
     .carousel-next {
-        right: 5px;
+        right: -15px; /* Nicely positioned at edge on small mobile */
     }
     
     .carousel-indicators {

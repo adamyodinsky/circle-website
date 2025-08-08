@@ -93,36 +93,59 @@ class ScreenshotCarousel {
 
   bindTouchEvents() {
     let startX = 0;
+    let startY = 0;
     let currentX = 0;
+    let currentY = 0;
     let isDragging = false;
+    let isHorizontalSwipe = false;
 
     this.carousel.addEventListener("touchstart", (e) => {
       startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
       isDragging = true;
+      isHorizontalSwipe = false;
       this.pauseAutoPlay();
     });
 
     this.carousel.addEventListener("touchmove", (e) => {
       if (!isDragging) return;
+
       currentX = e.touches[0].clientX;
-      e.preventDefault();
+      currentY = e.touches[0].clientY;
+
+      const deltaX = Math.abs(currentX - startX);
+      const deltaY = Math.abs(currentY - startY);
+
+      // Determine if this is a horizontal or vertical swipe
+      if ((!isHorizontalSwipe && deltaX > 10) || deltaY > 10) {
+        isHorizontalSwipe = deltaX > deltaY;
+      }
+
+      // Only prevent default for horizontal swipes
+      if (isHorizontalSwipe && deltaX > deltaY) {
+        e.preventDefault();
+      }
     });
 
     this.carousel.addEventListener("touchend", () => {
       if (!isDragging) return;
 
-      const deltaX = startX - currentX;
-      const threshold = 50;
+      // Only process horizontal swipes
+      if (isHorizontalSwipe) {
+        const deltaX = startX - currentX;
+        const threshold = 50;
 
-      if (Math.abs(deltaX) > threshold) {
-        if (deltaX > 0) {
-          this.goToNext();
-        } else {
-          this.goToPrevious();
+        if (Math.abs(deltaX) > threshold) {
+          if (deltaX > 0) {
+            this.goToNext();
+          } else {
+            this.goToPrevious();
+          }
         }
       }
 
       isDragging = false;
+      isHorizontalSwipe = false;
       this.startAutoPlay();
     });
   }
