@@ -4,41 +4,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circle - Real connections, not just followers</title>
+  <title>Circle - Meet People, Not Content</title>
+  <meta name="description"
+    content="Circle helps you connect with real people nearby — not just scroll through strangers online. No ads, just authentic local connections.">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="assets/favicon_io/site.webmanifest">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#1B3168">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Circle">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="landing-styles.css">
 </head>
 
 <body>
-  <div class="container">
-    <div class="logo-group">
-      <img src="assets/img/logo.png" alt="Circle Logo" class="logo">
-      <h1 class="app-title">Circle</h1>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="logo-group">
+        <img src="assets/img/logo.png" alt="Circle Logo" class="logo">
+        <h1 class="app-title">Circle</h1>
+      </div>
+
+      <div class="hero-content">
+        <h2 class="hero-headline">Meet People, Not Content</h2>
+        <p class="hero-subheadline">Circle helps you connect with real people nearby — not just scroll through strangers
+          online.</p>
+        <p class="trust-line">Used by locals in your area. No ads. Just people.</p>
+
+        <div class="app-buttons">
+          <a href="https://apps.apple.com/app/id6747255364" class="app-button ios-link">
+            <img src="assets/img/appstore.png" alt="Download on the App Store">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.adamsolutions.circle"
+            class="app-button android-link">
+            <img src="assets/img/googleplay.png" alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="content">
-      <p>Real connections - Not just followers</p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Why Circle Works</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3 class="feature-title">Location-first feed</h3>
+          <p class="feature-description">See posts from people within your area - instantly more relevant.</p>
+        </div>
+        <div class="feature-item">
+          <h3 class="feature-title">Meet, don't scroll</h3>
+          <p class="feature-description">Designed to encourage real conversations and real-world connections.</p>
+        </div>
+        <div class="feature-item">
+          <h3 class="feature-title">No noise, just locals</h3>
+          <p class="feature-description">Less algorithm. More authenticity. Feel part of your community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section class="screenshots">
+    <div class="container">
+      <div class="screenshots-carousel">
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="carousel-slide active">
+              <img src="assets/img/screenshots/feed_pic_1.png"
+                alt="Circle app home feed showing local user posts and interactions" class="screenshot-image">
+              <p class="screenshot-caption">Discover people near you, instantly.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/img/screenshots/feed_pic_2.png"
+                alt="Circle app feed with location-based content and user interactions" class="screenshot-image">
+              <p class="screenshot-caption">See what's happening in your area.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/img/screenshots/male_profile_screen.png"
+                alt="Circle app male user profile showing authentic details and preferences" class="screenshot-image">
+              <p class="screenshot-caption">Connect through authentic profiles.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/img/screenshots/female_profile_page.png"
+                alt="Circle app female user profile with personal interests and location" class="screenshot-image">
+              <p class="screenshot-caption">Real people, real connections.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/img/screenshots/chat_screen.png"
+                alt="Circle app chat interface for messaging with nearby users" class="screenshot-image">
+              <p class="screenshot-caption">Chat with real people, not influencers.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/img/screenshots/scout_feature.png"
+                alt="Circle app scout feature for finding new local connections" class="screenshot-image">
+              <p class="screenshot-caption">Scout for new circles in your area.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/img/screenshots/discover_feature.png"
+                alt="Circle app discover feature showing nearby users and activities" class="screenshot-image">
+              <p class="screenshot-caption">Explore your local community.</p>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button class="carousel-nav carousel-prev" aria-label="Previous screenshot"></button>
+          <button class="carousel-nav carousel-next" aria-label="Next screenshot"></button>
+        </div>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators" role="tablist" aria-label="Screenshot indicators">
+          <!-- Indicators will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Section -->
+  <section class="privacy">
+    <div class="container">
+      <div class="privacy-content">
+        <h2 class="section-title">Your Privacy Matters</h2>
+        <p class="privacy-promise">Your data stays private, and your attention belongs to people — not ads.</p>
+        <ul class="privacy-bullets">
+          <li>No ads, ever</li>
+          <li>No selling your data</li>
+          <li>Delete your account anytime</li>
+        </ul>
+        <a href="privacy-policy.html" class="privacy-link">Privacy Policy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="cta-headline">Join the Circle</h2>
+      <p class="cta-reinforcement">Connect with your city in a more human way — starting today.</p>
+
       <div class="app-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.adamsolutions.circle" id="android-link"
-          class="app-button">
-          <img src="assets/img/googleplay.png" alt="Get it on Google Play">
-        </a>
-        <a href="https://apps.apple.com/app/id6747255364" id="ios-link" class="app-button">
+        <a href="https://apps.apple.com/app/id6747255364" class="app-button ios-link">
           <img src="assets/img/appstore.png" alt="Download on the App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.adamsolutions.circle"
+          class="app-button android-link">
+          <img src="assets/img/googleplay.png" alt="Get it on Google Play">
         </a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="privacy-link">
-    <a href="privacy-policy.html">Privacy Policy</a>
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="support.html">Support</a>
+        <a href="eula.html">End User License Agreement (EULA)</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+      <p class="footer-copyright">&copy; 2024 Circle. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="carousel.js"></script>
+  <script src="landing-script.js"></script>
 </body>
 
 </html>
