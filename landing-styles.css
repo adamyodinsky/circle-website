@@ -578,6 +578,7 @@ body {
 .final-cta {
     padding: var(--section-padding) 0;
     text-align: center;
+    background-color: #fafafa;
 }
 
 .cta-headline {
