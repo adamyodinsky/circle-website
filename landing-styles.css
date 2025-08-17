@@ -74,11 +74,49 @@ body {
 
 .hero-headline {
     font-family: 'Fredoka', sans-serif;
-    font-size: clamp(32px, 6vw, 48px);
+    font-size: clamp(24px, 7vw, 36px);
+    font-weight: 700;
+    color: var(--circle-navy);
+    margin-bottom: 16px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-subheadline {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 400;
+    color: var(--circle-coral);
+    margin-bottom: 40px;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+}
+
+.hero-tagline {
+    font-size: clamp(18px, 4vw, 22px);
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.hero-emotional-section {
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.emotional-text {
+    font-size: clamp(16px, 3.5vw, 18px);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.emotional-text strong {
     font-weight: 600;
     color: var(--circle-navy);
-    margin-bottom: 20px;
-    line-height: 1.2;
 }
 
 .hero-subheadline {
