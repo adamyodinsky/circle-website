@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Get user ID from URL parameters
   const urlParams = new URLSearchParams(window.location.search);
+  const inviteType = urlParams.get("type") || "profile";
   const userId = urlParams.get("userId") || "default";
+  const channelId = urlParams.get("channelId") || "default";
   const inviterName = urlParams.get("name") || "John Doe";
 
   // Update invite message
   const inviteMessage = document.getElementById("invite-message");
-  inviteMessage.textContent = `${inviterName} wants to connect on Circle!`;
+  inviteMessage.textContent =
+    inviteType === "profile"
+      ? `${inviterName} wants to connect on Circle!`
+      : `You are invited to join the ${inviterName} group chat on circle!`;
 
   // Get platform-specific elements
   const androidLink = document.getElementById("android-link");
@@ -26,11 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Handle connect button click
   const connectButton = document.getElementById("connect-button");
-  connectButton.textContent = `Connect with ${inviterName}`;
+  connectButton.textContent =
+    inviteType === "profile"
+      ? `Connect with ${inviterName}`
+      : `Join ${inviterName}`;
   connectButton.addEventListener("click", function () {
     // Construct deep links
-    const androidDeepLink = `com.adamsolutions.circle://(screens)/profile/${userId}`;
-    const iosDeepLink = `com.adamsolutions.circle://(screens)/profile/${userId}`;
+    const deepLink =
+      inviteType === "profile"
+        ? `com.adamsolutions.circle://(screens)/profile/${userId}`
+        : `com.adamsolutions.circle://(screens)/circles/join/${channelId}`;
 
     // Fallback URLs (app store links)
     const androidStoreLink =
@@ -39,13 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Try to open app with deep link, fall back to store if app not installed
     if (isAndroid) {
-      window.location.href = androidDeepLink;
+      window.location.href = deepLink;
       // Fallback to Play Store after a short delay
       setTimeout(() => {
         window.location.href = androidStoreLink;
       }, 500);
     } else if (isIOS) {
-      window.location.href = iosDeepLink;
+      window.location.href = deepLink;
       // Fallback to App Store after a short delay
       setTimeout(() => {
         window.location.href = iosStoreLink;
@@ -53,7 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // On desktop, show a modal or alert
       alert(
-        "Please open this link on your mobile device to connect with Adam on Circle!"
+        `Please open this link on your mobile device to ${
+          inviteType === "profile"
+            ? `connect with ${inviterName} on Circle!`
+            : `join the ${inviterName} group chat on Circle!`
+        }`
       );
     }
   });
