@@ -96,15 +96,10 @@
     if (deeplink) {
       // Try to open the app with the deeplink
       window.location.href = deeplink;
-
-      // Show fallback UI after 1.5s if app doesn't open
-      setTimeout(() => {
-        showFallback();
-      }, 1500);
-    } else {
-      // Invalid type or missing id - show fallback immediately
-      showFallback();
     }
+
+    // Show fallback immediately - if app opens, user leaves anyway
+    showFallback();
   </script>
 </body>
 
