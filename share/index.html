@@ -13,7 +13,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Circle">
   <link rel="stylesheet" href="../fonts.css">
-  <link rel="stylesheet" href="../store/redirect.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
@@ -22,8 +22,21 @@
       <img src="../assets/img/logo.png" alt="Circle Logo" class="logo">
       <h1 class="app-title">Circle</h1>
     </div>
-    <div class="content">
-      <p>Real connections - Not just followers</p>
+    <!-- Fallback UI (hidden initially) -->
+    <div id="fallback" class="invite-content" style="display: none;">
+      <div class="divider">
+        <span>Don't have Circle yet?</span>
+      </div>
+      <div class="app-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.adamsolutions.circle" id="android-link"
+          class="app-button">
+          <img src="../assets/img/googleplay.png" alt="Get it on Google Play">
+        </a>
+        <a href="https://apps.apple.com/app/id6747255364" id="ios-link" class="app-button">
+          <img src="../assets/img/appstore.png" alt="Download on the App Store">
+        </a>
+        <p class="subtitle">Real connections - Not just followers</p>
+      </div>
     </div>
   </div>
 
@@ -64,6 +77,19 @@
       return DEEPLINK_BASE + pathBuilder(id);
     }
 
+    // Show fallback UI with platform-specific store button
+    function showFallback() {
+      const fallback = document.getElementById('fallback');
+      fallback.style.display = 'flex';
+
+      // Hide irrelevant platform button
+      if (isAndroid) {
+        document.getElementById('ios-link').style.display = 'none';
+      } else if (isIOS) {
+        document.getElementById('android-link').style.display = 'none';
+      }
+    }
+
     // Main redirect logic
     const deeplink = buildDeeplink(type, id);
 
@@ -71,13 +97,13 @@
       // Try to open the app with the deeplink
       window.location.href = deeplink;
 
-      // Fallback to app store after 500ms if app doesn't open
+      // Show fallback UI after 1.5s if app doesn't open
       setTimeout(() => {
-        window.location.href = getStoreUrl();
-      }, 500);
+        showFallback();
+      }, 1500);
     } else {
-      // Invalid type or missing id - redirect to store
-      window.location.href = getStoreUrl();
+      // Invalid type or missing id - show fallback immediately
+      showFallback();
     }
   </script>
 </body>
