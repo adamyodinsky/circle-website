@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle - Real connections, not just followers</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Circle">
+  <link rel="stylesheet" href="../fonts.css">
+  <link rel="stylesheet" href="../store/redirect.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo-group">
+      <img src="../assets/img/logo.png" alt="Circle Logo" class="logo">
+      <h1 class="app-title">Circle</h1>
+    </div>
+    <div class="content">
+      <p>Real connections - Not just followers</p>
+    </div>
+  </div>
+
+  <script>
+    const ANDROID_STORE_URL = 'https://play.google.com/store/apps/details?id=com.adamsolutions.circle';
+    const IOS_STORE_URL = 'https://apps.apple.com/app/id6747255364';
+    const DEEPLINK_BASE = 'com.adamsolutions.circle://';
+
+    // DeepLink path mapping for each content type
+    const DEEPLINK_PATHS = {
+      post: (id) => `(screens)/feed/post/${id}`,
+      comment: (id) => `(screens)/feed/comment/${id}`,
+      profile: (id) => `(screens)/profile/${id}`,
+      channel: (id) => `(screens)/circles/join/${id}`
+    };
+
+    // Parse URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get('type');
+    const id = urlParams.get('id');
+
+    // Detect platform
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isAndroid = /android/.test(userAgent);
+    const isIOS = /ipad|iphone|ipod/.test(userAgent);
+
+    // Get the appropriate store URL based on platform
+    function getStoreUrl() {
+      return isAndroid ? ANDROID_STORE_URL : IOS_STORE_URL;
+    }
+
+    // Build deeplink URL based on type and id
+    function buildDeeplink(type, id) {
+      const pathBuilder = DEEPLINK_PATHS[type];
+      if (!pathBuilder || !id) {
+        return null;
+      }
+      return DEEPLINK_BASE + pathBuilder(id);
+    }
+
+    // Main redirect logic
+    const deeplink = buildDeeplink(type, id);
+
+    if (deeplink) {
+      // Try to open the app with the deeplink
+      window.location.href = deeplink;
+
+      // Fallback to app store after 500ms if app doesn't open
+      setTimeout(() => {
+        window.location.href = getStoreUrl();
+      }, 500);
+    } else {
+      // Invalid type or missing id - redirect to store
+      window.location.href = getStoreUrl();
+    }
+  </script>
+</body>
+
+</html>
